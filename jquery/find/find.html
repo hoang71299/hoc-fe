@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tiêu đề</title>
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script>
+    $(function () {
+      $('button').click(function () {
+        var li = $('li').find('.test').css('background-color', 'blue');
+        console.log(li);
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <button>Click</button>
+  <ul>
+    <li class="first">Thành phần thứ 1</li>
+    <li class="second">Thành phần thứ 2</li>
+    <li class="third">
+      <p>Thành phần thứ 3</p>
+      <ul>
+        <li>Thành phần con thứ 1</li>
+        <li class="test">Thành phần con thứ 2</li>
+        <li>Thành phần con thứ 3</li>
+      </ul>
+    </li>
+    <li class="fourth">Thành phần thứ 4</li>
+    <li class="fifth">Thành phần thứ 5</li>
+  </ul>
+</body>
+
+</html>

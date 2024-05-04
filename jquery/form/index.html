@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <style>
+    p {
+      background-color: red;
+    }
+  </style>
+  <h1>Xử lý form</h1>
+  <form action="https://www.24h.com.vn/">
+    <input type="text" value="" class="email">
+    <p class="err1"></p>
+
+    <input type="text" value="" class="password">
+    <p class="err2"></p>
+
+    <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+    <p class="err3"></p>
+
+    <select name="" id="" class="select">
+      <option value="0" selected></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <p class="err4"></p>
+
+
+
+
+    <input type="checkbox" class="checkbox">
+    <label for="">tieng viet</label>
+    <input type="checkbox" class="checkbox2">
+    <label for="">tieng hàn</label>
+    <p class="err5"></p>
+
+    <input type="radio" class="radio" name="gender">
+    <label for="">Nam</label>
+    <input type="radio" name="gender" class="radio">
+    <label for="">Nữ</label>
+    <p class="err6"></p>
+
+    <input type="file" class="file">
+    <p class="err7"></p>
+    <button type="submit">SEND</button>
+  </form>
+</body>
+<script>
+  $(document).ready(function () {
+    // cho action dùng lại 
+    // lay data nhập vào input và kiểm tra 
+    //   nêu data chưa nhập thi báo lỗi 
+    //   nếu nhập r cho chạy action
+    $("form").submit(function () {
+      var x = 1;
+      // lấy data nhập vào input như sau 
+      var getEmail = $("input.email").val()
+      var getPass = $("input.password").val()
+      // email 
+      // nếu data chưa nhập thì báo lỗi 
+      if (getEmail == "") {
+        // alert("vui lòng nhập ")
+        // text co dụng set đoạn text 
+        $("p.err1").text("vui lòng nhập")
+        x = 2;
+      } else {
+        $("p.err1").text("")
+      }
+
+
+      // password 
+      if (getPass == "") {
+        // alert("vui lòng nhập ")
+        // text co dụng set đoạn text 
+        $("p.err2").text("vui lòng nhập")
+        x = 2;
+      } else {
+        $("p.err2").text("")
+      }
+
+      // textarea 
+      var textarea = $("textarea.textarea").val()
+      // console.log(textarea);
+      if (textarea == "") {
+        $("p.err3").text("vui long nhap lai")
+        x = 2
+      } else {
+        $("p.err3").text("")
+      }
+
+
+      // select 
+      var select = $('.select').val()
+      // console.log(select);
+      if (select == 0) {
+        $("p.err4").text("vui long chon lai")
+        x = 2
+      } else {
+        $("p.err4").text("")
+      }
+
+
+      // checkbox 
+      var checkboxValue = $('.checkbox').prop('checked');
+      var checkboxValue2 = $('.checkbox2').prop('checked');
+      // console.log(checkboxValue);
+      if (checkboxValue || checkboxValue2) {
+        $("p.err5").text("")
+
+      } else {
+        $("p.err5").text("vui long nhap lai")
+        x = 2
+      }
+
+
+      // radio 
+      var selectedValue = $('input[name="gender"]:checked').val();
+      // console.log(typeof selectedValue);
+      if (selectedValue == undefined) {
+        $("p.err6").text("vui long nhap lai")
+        x = 2
+      } else {
+        $("p.err6").text("")
+      }
+
+      
+
+      // file 
+
+      var file = $(".file").val()
+      // console.log(  file);
+      if (file == "") {
+        $("p.err7").text("vui long nhap lai")
+        x = 2
+      } else {
+        $("p.err7").text("")
+      }
+      // nếu có 10 input thi cách nào k tối ưu 
+      // if(getEmail != "" && getPass != ""){
+      //   return true
+      // }
+      // nếu x= 2 thi 1 input nao đó chưa nhập
+      // nếu x=1 tất cả ok 
+      //cho form dung lai để xử lý input nhập chưa
+      if (x == 1) {
+        return true
+      }
+
+      // console.log(x);
+      return false
+    });
+  });
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     - tao index7.html
+      //  + lay obj bên bài index5 ra(chu y kiem tra co k)
+      //  + tao 1 obj mới có value 11-20
+      //  + merge obj cũ  va obj mới vao lại làm 1 .
+      //  + sau đo tinh tổng các value có trong obj mới này.
+
+      var obj = {};
+      for (var i = 1; i <= 10; i++) {
+        obj[i] = i;
+      }
+      var objString = JSON.stringify(obj);
+      localStorage.setItem("demo", objString);
+      console.log(obj);
+      var obj2={}
+      for (let i = 11; i < 21; i++) {
+        obj2[i]=i;       
+      }
+      console.log(obj2);
+      var obj3={
+        ...obj,...obj2
+      }
+      console.log(obj3);
+      var tong=0
+      Object.keys(obj3).map(function(key,index){
+        console.log(obj3[key]);
+        tong= tong+obj3[key]
+      })
+      console.log(tong);
+    </script>
+  </body>
+</html>

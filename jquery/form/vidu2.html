@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <style type="text/css">
+    p {
+      background-color: red;
+    }
+  </style>
+  <!-- phai goi thu vien no vao -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+
+
+
+      $("form").submit(function (e) {
+        // var getT = $("textarea").val();
+
+        var getS = $("select").val();
+        console.log(getS);
+
+        if (getS == "") {
+          // => loi
+        } else {
+          // ...
+        }
+
+
+
+        // lay trang thai da check hay chua
+        var getCheck = $("input#checkbox").is(":checked");
+        // alert(getCheck)
+        // chon-> true
+        // chưa ->False
+
+
+        if (getCheck == false) {
+          // => loi
+          $("p").text("vui long check")
+        } else {
+          $("p").text("")
+        }
+
+
+
+        return false;
+      })
+
+
+
+
+      // bien toan cuc: là biến dc su dung ở bat ky dau
+      // bien cục bộ: la biến dc su dung trong pham vi khai bao
+
+      // bien toan cuc
+      // var x = 1;
+      // var z = "";//2
+
+      // $(".form1").submit(function(){
+
+      //    alert(x) => 1
+
+      //    var y = 2;
+
+      //    alert(y) = > 2
+
+      //    z = y;
+
+      //    z = ? //2
+
+      // })
+
+
+
+
+      // $(".form2").submit(function(e){
+
+      //    alert(x) => 1
+      //    alert(z) => 2
+      // })
+
+      // alert(x) => 1
+      // alert(z) => 2
+
+
+    })
+
+
+
+
+  </script>
+</head>
+
+<body>
+
+
+
+
+
+  <!-- 
+trong form có cac the:
+- input type=text, checkbox, radio, file
+- textarea,
+- select -->
+
+  <!-- <img src={"http../..." + value['image']} /> -->
+
+  <form action="https://www.24h.com.vn/?">
+
+    <input type="checkbox" name="" id="checkbox" value="">
+    <select>
+      <option value="">vui long chon</option>
+      <option value="1">male</option>
+      <option value="2">female</option>
+    </select>
+
+    <button type="submit">send 1</button>
+  </form>
+
+
+
+</body>
+
+</html>

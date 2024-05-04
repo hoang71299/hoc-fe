@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- // - Tạo tiếp 1 trang index2.html :
+//   + gọi obj trong localstora ở bài 1 ra( nhớ phải kiêm tra )
+//   + Dùng map để duyêt và hiển thị các value và key dưới dạng console 
+//   + sau đo add thêm 1 ọbj mới vào obj cũ trc đó và đưa vao localstora. -->
+
+    <script>
+      var bien = {};
+      bien["bien1"] = "iphone";
+      bien["bien2"] = "oppo";
+      bien["bien3"] = "nokia";
+      bien["bien4"] = "samsung";
+
+      var bien2 = JSON.stringify(bien);
+      localStorage.setItem("demo", bien2);
+
+      if(Object.keys(bien).length > 0){
+        Object.keys(bien).map(function(key,index){
+          console.log('-----------key-----------');
+          console.log(key);
+          console.log('-----------value---------');
+          console.log(bien[key]);
+        })
+      }
+
+      var obj={
+        "name":"hoang",
+      }
+      bien['bien5']=obj
+      
+      var bien3=JSON.stringify(bien);
+      console.log(bien3);
+      localStorage.setItem("demo",bien3);
+    </script>
+  </body>
+</html>

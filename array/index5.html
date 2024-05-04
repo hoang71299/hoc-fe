@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- - tao index5.html
+  + tao 1 array rỗng
+  + thêm 1-10 vào array, console ra xem thử đã thêm vào dc chưa?
+  + dua array vào local -->
+
+    <script>
+      var arr = [];
+      for (let i = 1; i <= 10; i++) {
+        arr.push(i);
+      }
+      console.log(arr);
+      var xx = JSON.stringify(arr);
+      localStorage.setItem("demo", xx);
+    </script>
+  </body>
+</html>

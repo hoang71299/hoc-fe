@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [
+        { id: "john", name: "John Smith", age: 20 },
+        { id: "ann", name: "Ann Smith", age: 24 },
+        { id: "pete", name: "Pete Peterson", age: 31 },
+      ];
+
+      // obj = {
+      //   { id: "john", name: "John Smith", age: 20 },
+      //   { id: "ann", name: "Ann Smith", age: 24 },
+      //   { id: "pete", name: "Pete Peterson", age: 31 },
+      // }
+      const obj = {};
+      arr.map(function (value, key) {
+        obj[value.id] = value;
+      });
+      console.log(obj);
+
+
+
+
+    </script>
+  </body>
+</html>

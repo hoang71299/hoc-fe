@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- Yêu cầu:  Click vào tab nào thi show hinh ảnh con của tab đó bên dưới (sử dụng html bên dưới thêm class va id tuỳ thích)
+      chu ý: mỗi lần click thi chỉ 1 hình ảnh dc hien thi.
+      Nghia la click vao TINTUC  thi chi có hình ảnh của tt dc hien thi.
+      click vao bongda thi chi có hình ảnh cua bong da dc hien thi... -->
+  <style type="text/css">
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+
+    ul li {
+      display: inline-block;
+      margin: 0 10px;
+      background-color: red;
+    }
+  </style>
+  <div class="demo">
+    <ul>
+      <li class="tin-tuc" id="">tin tuc</li>
+      <li class="bong-da">bong da</li>
+      <li class="thoi-trang">thoi trang</li>
+    </ul>
+
+    <div class="content">
+      <div class="hide show" id="tin-tuc">
+        <img
+          src="https://icdn.24h.com.vn/upload/2-2024/images/2024-04-20/255x170/1713572382-543-thumbnail-width740height495_anh_cat_3_2.jpg">
+      </div>
+      <div class="hide" id="bong-da">
+        <img
+          src="https://icdn.24h.com.vn/upload/2-2024/images/2024-04-20/255x170/gettyimages-2149288011-2048x2048--3--1713567839-108-width740height495.jpg">
+      </div>
+      <div class="hide" id="thoi-trang">
+        <img
+          src="https://cdn.eva.vn/upload/2-2024/images/2024-04-20/x-large/1713581301-220-thumbnail-width1129height847.jpg">
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $('li').click(function () {
+        var li = $(this).attr('class')
+        // console.log(li);
+        $('div.content div').removeClass('show')
+        $('div.content div#' + li).addClass('show')
+      })
+    })
+
+  </script>
+</body>
+
+</html>

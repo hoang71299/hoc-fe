@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+  - tao index7.html
+  + lay array bên bài index5 ra(chu y kiem tra co k)
+  + tao 1 array mới có value 11-20
+  + merge array cũ  va array mới vao lại làm 1 .
+  + sau đo tinh tổng các value có trong array mới này.
+
+  merge 2 arr thi tham khảo link sau:
+  https://www.w3schools.com/jsref/jsref_concat_array.asp -->
+    <script>
+      var arr = [];
+      var arr2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+      var arr3 = [];
+      for (let i = 1; i <= 10; i++) {
+        arr.push(i);
+      }
+      if (arr.length) {
+        arr3 = arr.concat(arr2);
+        console.log(arr3);
+        tong = 0;
+        for (var i = 0; i < arr3.length; i++) {
+          tong = tong + arr3[i];
+        }
+        console.log(tong);
+      }
+    </script>
+  </body>
+</html>

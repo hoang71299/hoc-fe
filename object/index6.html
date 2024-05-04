@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     - tao index6.html
+      //  + lay obj bên bài index5 ra(chu y kiem tra co k)
+      //  + dung vòng lặp map hiển thị duy nhất 1 số 9 ra
+      //  + từ vào obj này, dùng MAP(hoac for) lấy các value > 5 ra và đưa vào obj mới , và consolo obj cuối cùng để xem kêt quả.
+      //  + dua obj mới nay vao local
+
+      var obj = {};
+      for (var i = 1; i <= 10; i++) {
+        obj[i] = i;
+      }
+      var objString = JSON.stringify(obj);
+      localStorage.setItem("demo", objString);
+      console.log(obj);
+
+      var obj2=JSON.parse(localStorage.getItem("demo"))
+      console.log(obj2);
+      var obj3={}
+      if(Object.keys(obj2).length > 0){
+        Object.keys(obj2).map((key,index)=>{
+          if(obj2[key] > 5){
+            console.log(obj[key]);
+            obj3[key]=obj[key]
+          }
+        })
+      }
+      console.log(obj3);
+
+      localStorage.setItem("demo",JSON.stringify(obj3));
+    </script>
+  </body>
+</html>

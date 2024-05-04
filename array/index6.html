@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- - tao index6.html
+  + lay array bên bài index5 ra(chu y kiem tra co k)
+  + dung vòng lặp map hiển thị duy nhất 1 số 9 ra
+  + từ vào array này, dùng MAP(hoac for) lấy các value <= 5 ra và đưa vào arr mới , và consolo array cuối cùng để xem kêt quả.
+  + tương tự vào array này, dùng filter(lọc) lấy các value <= 5 ra và đưa vào arr mới , và consolo array cuối cùng để xem kêt quả.
+  + và đưa arr mới vao local
+  
+  filter thi tham khảo:https://www.w3schools.com/jsref/jsref_filter.asp  -->
+
+    <script>
+      var arr = [];
+      for (let i = 1; i <= 10; i++) {
+        arr.push(i);
+      }
+      if (arr.length) {
+        arr.map(function (value, key) {
+          if (key == 8) {
+            console.log(value);
+          }
+        });
+        var arr2 = [];
+        arr.map(function (value, key) {
+          if (value <= 5) {
+            arr2.push(value);
+          }
+        });
+        console.log(arr2);
+
+        const arr3 = [];
+        arr.filter(function (value, key) {
+          if (value <= 5) {
+            arr3.push(value);
+          }
+        });
+        console.log(arr3);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- tao 2 form có class hoặc id bất kỳ
+ + form 1 co 2 input :email va pass , tất nhiên form luôn kèm nut button để click
+ + form 2 chi có 1 nut button.
+
+yêu cầu:
+-viet hàm click vào form 1, dùng hàm submit,
++Thi kiêm tra email va pass nhập chưa, nêu chưa nhập thì hiện thị thông báo lỗi bên dưới mỗi thẻ input
++Nêu cả 2 nhập rồi thi lấy email va pass đều vào 2 biến toàn cuc.
+chú y luôn cho form return false.
+
+
+- viết hàm click vao form 2 thi lây 2 biến toàn cục ở trên xuông và alert hoặc console ra xem có lấy xuong dc email va pass đã nhập chưa
+chú y luôn cho form return false. -->
+
+  <form action="" class="form1">
+    <div class="form-group">
+      <input type="text" class="email ">
+      <p class="err"></p>
+    </div>
+    <div>
+      <input type="password" class="password">
+      <p class="err2"></p>
+    </div>
+
+    <button type="submit">Gửi</button>
+  </form>
+  <form action="" class="form2">
+    <button type="submit">lấy từ form 1</button>
+  </form>
+
+  <script>
+    $(document).ready(function () {
+      var x = "";
+      var y = "";
+      $(".form1").submit(function (e) {
+        e.preventDefault()
+        var getEmail = $(".email").val();
+        var getPass = $(".password").val();
+        if (getEmail == "") {
+          $("p.err").text("vui lòng nhập lại")
+        } else {
+          $("p.err").text("");
+        }
+
+
+        if (getPass == "") {
+          $("p.err2").text("vui lòng nhập lại")
+        } else {
+          $("p.err2").text("");
+        }
+        if (getEmail != "" && getPass != "") {
+          x = getEmail;
+          y = getPass;
+          alert("ok")
+
+          return true;
+        }
+        return false
+      });
+
+      $(".form2").submit(function (e) {
+        e.preventDefault()
+
+        alert("email: " + x);
+        alert("pass: " + y);
+        return false
+      });
+    });
+  </script>
+</body>
+
+</html>

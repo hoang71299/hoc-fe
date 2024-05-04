@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- chú y cú pháp lây 1 value trong obj ra: tên-obj[key]
+nếu object 2 chiêu có nhiều key thi: ten-obj[key-cha][key-con]... -->
+
+    <script>
+      var objCha = {
+        bao1: {
+          xx: "baovic",
+          yy: "baovic@gmail.com",
+        },
+        bao2: {
+          xx: "baovic2",
+          yy: "baovic@gmail.com2",
+        },
+        bao3: {
+          xx: "baovic3",
+          yy: "baovic@gmail.com3",
+        },
+        bao4: {
+          xx: "baovic4",
+          yy: "baovic@gmail.com4",
+        },
+      };
+      Object.keys(objCha).map(function (key, index) {
+        var xx = key
+        var xy= objCha[key]['xx']
+        console.log(xx + "-"+ xy );
+      });
+      
+    </script>
+  </body>
+</html>

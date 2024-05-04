@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script> 
+    var mang1=[];
+    mang1.push("iphone","nokia","samsung")
+    var demo1={}
+    demo1['vdu1']="samsung"
+    demo1.vidu2="iphone"
+    console.log(demo1);
+
+
+    // key : value 
+    // vdu1: "samsung"
+    // vidu2: "iphone"
+
+    // key là do minh tụ tạo ra 
+    // value thì có thể là sô , chuỗi , hoặc chuỗi array và object (gọi là đa cấp) 
+    //tương tự array để lấy length ra thì
+    // console.log(Object.keys(demo1).length);
+    // kiêm tra object có data không thì tương tự arr 
+    // if(Object.keys(demo1).length >0) {}
+
+    //cu pháp lấy 1 value thi tuong nhu mảng 
+    // tên-obj[key]
+    // vidu láy iphone ra 
+    // console.log(demo1['vidu2']);
+
+    // giờ lấy mảng 1 ở trên xuống làm value của Object và đặt key bất kì 
+    demo1['arr']=mang1
+    // arr:key minh tự đặt 
+    console.log(demo1);
+
+    // để lấy 1 value trong obj 2 chiều hi cũng như trên nhưng lấy nhiều key hơn 
+    // console.log(demo1["arr"][2]);
+
+    // giờ tạo nhanh 1 object con như sau 
+    var demo2 = {
+      cirty:"da nang",
+      name:"bao vic"
+    }
+
+    // giờ đưa object này vào làm obj con của demo1  như sau 
+    demo1['obj']=demo2
+    console.log(demo1);
+
+    // tuong tu để lấy anh bảo vic ra thi lấy key cha con 
+    console.log(demo1['obj']['name']);
+
+    // do key của obj không phải là số nên không dùng là số nên không dùng ỏ được ,
+    // ta phải dùng hàm map riêng của nó 
+    console.log("demo1",demo1);
+    Object.keys(demo1).map(function(key,index){
+      // nó là key và index 
+      // console.log(key);
+      console.log(demo1[key]);
+    })
+
+    // Object.values(demo1).map(function(value,index){
+    //   console.log(value);
+    // })
+
+
+
+// - Tạo 1 trang index.html:
+//  +  tạo obj bằng rỗng.
+//  + Sau đó thêm 4 key va value vào obj để tạo 1 obj đa cấp
+//   + Đưa obj đa cấp đó vào localstorage
+
+// - Tạo tiếp 1 trang index2.html :
+//   + gọi obj trong localstora ở bài 1 ra( nhớ phải kiêm tra )
+//   + Dùng map để duyêt và hiển thị các value và key dưới dạng console 
+//   + sau đo add thêm 1 ọbj mới vào obj cũ trc đó và đưa vao localstora.
+	
+// -Tao index3.html: 
+//   + lây obj trong localstora ra (chu y kiem tra)
+//   + console xem có obj đã thêm trong bài 2 chưa?
+//   + Dùng map để duyêt và hiển thị các value và key dưới dạng console
+//   + Sau đó tim cách xoá 1 obj, ( xoá obj bằng key).
+//   + Rôi dua obj vao tiếp localstora
+
+// -Tạo index4.html : 
+//  + lây obj : tuong tu cac phan trc do
+//  + hiển thị ra xem đã xoá thằng obj ở bài 3 chưa?
+ 
+  </script>
+</body>
+</html>

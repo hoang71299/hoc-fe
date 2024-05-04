@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <style>
+    .active {
+      color: red;
+    }
+  </style>
+  <!-- lam jquery thi goi thu viện vào trrc -->
+  <a href="#">thẻ a</a>
+  <p>hello</p>
+
+  <ul>
+    <li class="active1">1</li>
+    <li class="active2">2</li>
+    <li class="active3">3</li>
+    <li class="active4">4</li>
+  </ul>
+  <!-- bai tap 1:
+
+  - tao 1 the "a"
+    + click vao the "a" lan dau thi them class "ACTIVE" vao the a
+    + click vao the "a" lan 2 , neu co class "ACTIVE" thi xoa class do di.
+    tuong tu lan 3 va 4.
+
+  
+  bai tap 2:
+  - tao 1 the "a"
+    + click vao the "a" lan dau thi them class "ACTIVE" vao the a va dong thoi HIDE P di
+    + click vao the "a" lan 2 , neu co class "ACTIVE" thi xoa class do di va show the P len
+    tuong tu lan 3 va 4.
+
+  
+  bai tap 3:
+   - Tao 1 ul va 4 LI, cho mỗi LI 1 class hoặc ID rieng.
+   - Click vao Li có CLASS/ID nao  thi them màu vao cho Li do -->
+
+  <!-- bai 1 -->
+  <script>
+    $(document).ready(function () {
+      $("a").click(function () {
+        if ($("a").hasClass("active")) {
+          $("a").removeClass("active")
+        } else {
+          $("a").addClass("active")
+        }
+      })
+    });
+    // bai2
+    $(document).ready(function () {
+      $("a").click(function () {
+        if ($("a").hasClass("active")) {
+          $("a").removeClass("active")
+          $("p").show();
+        } else {
+          $("a").addClass("active")
+          $("p").hide();
+        }
+      })
+    });
+
+    // bai 3 
+
+    $(document).ready(function () {
+      $("li").click(function () {
+        // Thay đổi màu của li đã click
+        $(this).addClass("active")
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

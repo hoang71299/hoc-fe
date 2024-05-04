@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+ <ul>
+  <li class="li1">1</li>
+  <li class="li2">2</li>
+  <li class="li3">3</li>
+  <li class="li4">4</li>
+ </ul>
+  <script>
+    $(document).ready(function () {
+      $('li').click(function () {
+        var li = $(this).attr('class')
+        $(this).addClass("active")
+        console.log(li);
+      })
+    });
+  </script>
+  <!-- Tạo 1 ul và 4 li, trong mỗi li thì cho 1 class khác nhau.
+  viết hàm click vào li nào thì lấy class của thẻ li đó ra -->
+  
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+</head>
+
+<body>
+  <!-- E tao 1 button va the p
+Vic
+Viet hàm click vap button
+- lan 1 thi hide the p di
+- lần 2 thi show p len
+- 3 thì hide p
+- 4 show p -->
+  <button class="button1">Click</button>
+  <button class="button2">Click</button>
+  <p class="xin-chao">chào bạn</p>
+  <script>
+    // $(document).ready(function () {
+    //   $("button").click(function(){
+    //     if($("button").hasClass("active") == true){
+    //       $("button").removeClass("active")
+    //       $("p").show();
+    //     }else{
+    //       $("button").addClass("active")
+    //       $("p").hide();
+    //     }
+    //   })
+    // });
+
+      $(document).ready(function () {
+        $(".button1").click(function(){
+          var class1 = $("p").attr('class')
+          console.log(class1)
+        })
+        $(".button2").click(function(){
+          $("p").attr("class","the-p")
+        })
+      });
+  
+  </script>
+</body>
+
+</html>

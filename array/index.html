@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var mang1=[];
+    mang1.push("iphone","nokia","samsung")
+    // console.log(mang1);
+    //  ['iphone', 'nokia', 'samsung']
+    // 0: "iphone",
+    // 1: "nokia"
+    // 2: "samsung"
+    // length : 3 
+
+    // length cho biết có 3 phần từ 
+    // sau này muốn kiểm tra mảng có data hay không 
+    if(mang1.length){
+      // console.log(mang1.length);
+    }
+
+
+    // key : tự động tạo ra  , bắt đầu bằng  0 và tăng lên , key < length 1 dvi
+    // cú phap lấy value ra : ten-mang[value]
+    // vi dụ lấy samsung ra thì 
+    // console.log(mang1[2]);
+    for (let i = 0; i < mang1.length; i++) {
+      // ví dụ dùng vòng 1 lấy ra 1 cái key = 2;
+      if(i==2){
+        // console.log(mang1[i]);
+      }
+      // console.log(mang1[i]);
+      
+    }
+
+    // vòng lặp map không cần đếm i =0 và length gi hết 
+    // có bao nhiêu key và value nó sẽ tự lấy hết 
+    
+    mang1.map(function (value,key) {
+      // console.log(value);
+      // console.log(key);
+      if(key ==2){
+        console.log(value);
+      }
+    })
+
+    // giờ tạo 1 mảng bằng số như sau 
+    var mang2 = [];
+    mang2.push(1,2,3,4,5,6)
+    var sum = 0;
+    for(var i =0 ; i< mang2.length; i ++){
+      sum = sum + mang2[i];
+    }
+    // console.log(sum);
+    // dung map tinh tổng các số trong mảng 
+    s = 0 ;
+    mang2.map(function (value,key) {
+      s = s + value;
+    })
+    console.log(s);
+
+    // localStorage là 1 bộ nhớ tạm , có thể lưu trữ data dưới dạng chuỗi và chỉ cần đưa data vào
+    // thì qua trang html có thể lấy ra dùng và nó chỉ cho lưu data dưới dạng chuỗi nên đưa Array vào
+    // thì nó sẽ chuyền thành chuỗi 
+    // ví dụ mảng 2 
+
+    var xx = JSON.stringify(mang2)
+    localStorage.setItem("demo",xx);
+  </script>
+</body>
+</html>
